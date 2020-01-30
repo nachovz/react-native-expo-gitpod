@@ -6,6 +6,7 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import ShopdayHome from '../screens/ShopdayHome';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -67,8 +68,25 @@ SettingsStack.navigationOptions = {
 
 SettingsStack.path = '';
 
+const ShopdayStack = createStackNavigator(
+  {
+    Shopday: ShopdayHome,
+  },
+  config
+);
+
+ShopdayStack.navigationOptions = {
+  tabBarLabel: 'Shopday',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
+  ),
+};
+
+ShopdayStack.path = '';
+
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
+  ShopdayStack,
   LinksStack,
   SettingsStack,
 });

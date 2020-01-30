@@ -71,6 +71,7 @@ export default function HomeScreen() {
 
 HomeScreen.navigationOptions = {
   header: null,
+  title: 'shopday'
 };
 
 function DevelopmentModeNotice() {
@@ -112,6 +113,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+  },
+  topBar:{
+    textAlign: 'center',
+    position: 'absolute',
+    minHeight: 30
+  },
+  logo:{
+    color: '#00a82b',
+    fontStyle: 'italic'
   },
   developmentModeText: {
     marginBottom: 20,
